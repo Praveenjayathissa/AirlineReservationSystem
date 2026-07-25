@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2026 at 12:43 PM
+-- Generation Time: Jul 25, 2026 at 08:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -59,17 +59,9 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`booking_id`, `user_id`, `flight_id`, `seat_id`, `booking_date`) VALUES
-(19, 7, 1, 1, '2026-07-22 22:47:48'),
-(22, 9, 1, 8, '2026-07-23 06:54:24'),
-(26, 1, 2, 22, '2026-07-24 06:32:23'),
-(27, 1, 2, 25, '2026-07-24 06:32:34'),
-(28, 1, 1, 10, '2026-07-24 06:32:43'),
-(29, 1, 2, 17, '2026-07-24 07:20:24'),
-(30, 10, 2, 26, '2026-07-24 07:47:50'),
-(31, 1, 2, 20, '2026-07-24 07:52:17'),
-(32, 10, 9, 47, '2026-07-24 08:03:55'),
-(33, 11, 9, 62, '2026-07-24 08:23:24'),
-(34, 11, 2, 24, '2026-07-24 08:24:00');
+(35, 15, 10, 77, '2026-07-25 06:03:55'),
+(36, 14, 13, 138, '2026-07-25 06:05:10'),
+(37, 14, 14, 156, '2026-07-25 06:05:48');
 
 -- --------------------------------------------------------
 
@@ -94,11 +86,11 @@ CREATE TABLE `flights` (
 --
 
 INSERT INTO `flights` (`flight_id`, `flight_number`, `airline`, `origin`, `destination`, `departure_date`, `departure_time`, `arrival_time`, `price`) VALUES
-(1, 'UL101', 'SriLankan Airlines', 'Colombo', 'London', '2026-08-10', '08:00:00', '18:30:00', 850.00),
-(2, 'UL205', 'SriLankan Airlines', 'Colombo', 'Dubai', '2026-08-12', '10:00:00', '14:30:00', 420.00),
-(7, 'SL303', 'Sri Lankan Airline', 'Colombo', 'Japan', '2026-02-12', '12:52:00', '12:52:00', 750.00),
-(8, 'UL 420', 'SriLankan Airlines', 'Colombo', 'Canada', '2026-12-31', '02:00:00', '00:00:00', 950.00),
-(9, '0111', 'Air India', 'New Delhi', 'Colombo', '2027-01-12', '04:56:00', '05:15:00', 50.00);
+(10, 'SL 325', 'SriLankan Airline', 'Colombo', 'Tokyo', '2026-08-01', '08:00:00', '10:00:00', 400.00),
+(11, 'IND 102', 'Air India', 'New Delhi', 'Colombo', '2026-08-14', '16:00:00', '17:15:00', 100.00),
+(12, 'UK 809', 'Air UK', 'London', 'Beijing', '2026-08-20', '01:20:00', '15:50:00', 800.00),
+(13, 'SL 303', 'SriLankan Airline', 'Colombo', 'Dubai', '2026-08-30', '08:00:00', '23:20:00', 1000.00),
+(14, 'TH 406', 'Thai Air', 'Thailand', 'New York', '2026-09-02', '04:00:00', '17:00:00', 960.00);
 
 -- --------------------------------------------------------
 
@@ -120,17 +112,9 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `booking_id`, `transaction_id`, `amount`, `payment_method`, `payment_date`) VALUES
-(6, 19, 'TXN1784760468570', 850.00, 'Visa', '2026-07-22 22:47:48'),
-(9, 22, 'TXN1784789664772', 850.00, 'Visa', '2026-07-23 06:54:24'),
-(13, 26, 'TXN1784874743501', 420.00, 'Visa', '2026-07-24 06:32:23'),
-(14, 27, 'TXN1784874754955', 420.00, 'Visa', '2026-07-24 06:32:34'),
-(15, 28, 'TXN1784874763911', 850.00, 'Visa', '2026-07-24 06:32:43'),
-(16, 29, 'TXN1784877624147', 420.00, 'Visa', '2026-07-24 07:20:24'),
-(17, 30, 'TXN1784879270783', 420.00, 'Visa', '2026-07-24 07:47:50'),
-(18, 31, 'TXN1784879538018', 420.00, 'Visa', '2026-07-24 07:52:18'),
-(19, 32, 'TXN1784880235741', 50.00, 'Visa', '2026-07-24 08:03:55'),
-(20, 33, 'TXN1784881404410', 50.00, 'Visa', '2026-07-24 08:23:24'),
-(21, 34, 'TXN1784881440858', 420.00, 'Visa', '2026-07-24 08:24:00');
+(22, 35, 'TXN1784959435839', 400.00, 'MasterCard', '2026-07-25 06:03:55'),
+(23, 36, 'TXN1784959510777', 1000.00, 'Visa', '2026-07-25 06:05:10'),
+(24, 37, 'TXN1784959548702', 960.00, 'MasterCard', '2026-07-25 06:05:48');
 
 -- --------------------------------------------------------
 
@@ -150,56 +134,106 @@ CREATE TABLE `seats` (
 --
 
 INSERT INTO `seats` (`seat_id`, `flight_id`, `seat_number`, `status`) VALUES
-(1, 1, 'A1', 'Booked'),
-(2, 1, 'A2', 'Available'),
-(3, 1, 'A3', 'Available'),
-(4, 1, 'B1', 'Available'),
-(5, 1, 'B2', 'Available'),
-(6, 1, 'B3', 'Available'),
-(7, 1, 'C1', 'Available'),
-(8, 1, 'C2', 'Booked'),
-(9, 1, 'C3', 'Available'),
-(10, 1, 'D1', 'Booked'),
-(11, 1, 'D2', 'Available'),
-(12, 1, 'D3', 'Available'),
-(13, 1, 'E1', 'Available'),
-(14, 1, 'E2', 'Available'),
-(15, 1, 'E3', 'Available'),
-(16, 2, 'A1', 'Available'),
-(17, 2, 'A2', 'Booked'),
-(18, 2, 'A3', 'Available'),
-(19, 2, 'B1', 'Available'),
-(20, 2, 'B2', 'Booked'),
-(21, 2, 'B3', 'Available'),
-(22, 2, 'C1', 'Booked'),
-(23, 2, 'C2', 'Available'),
-(24, 2, 'C3', 'Booked'),
-(25, 2, 'D1', 'Booked'),
-(26, 2, 'D2', 'Booked'),
-(27, 2, 'D3', 'Available'),
-(28, 2, 'E1', 'Available'),
-(29, 2, 'E2', 'Available'),
-(30, 2, 'E3', 'Available'),
-(46, 9, 'A1', 'Available'),
-(47, 9, 'A2', 'Booked'),
-(48, 9, 'A3', 'Available'),
-(49, 9, 'A4', 'Available'),
-(50, 9, 'A5', 'Available'),
-(51, 9, 'B1', 'Available'),
-(52, 9, 'B2', 'Available'),
-(53, 9, 'B3', 'Available'),
-(54, 9, 'B4', 'Available'),
-(55, 9, 'B5', 'Available'),
-(56, 9, 'C1', 'Available'),
-(57, 9, 'C2', 'Available'),
-(58, 9, 'C3', 'Available'),
-(59, 9, 'C4', 'Available'),
-(60, 9, 'C5', 'Available'),
-(61, 9, 'D1', 'Available'),
-(62, 9, 'D2', 'Booked'),
-(63, 9, 'D3', 'Available'),
-(64, 9, 'D4', 'Available'),
-(65, 9, 'D5', 'Available');
+(66, 10, 'A1', 'Available'),
+(67, 10, 'A2', 'Available'),
+(68, 10, 'A3', 'Available'),
+(69, 10, 'A4', 'Available'),
+(70, 10, 'A5', 'Available'),
+(71, 10, 'B1', 'Available'),
+(72, 10, 'B2', 'Available'),
+(73, 10, 'B3', 'Available'),
+(74, 10, 'B4', 'Available'),
+(75, 10, 'B5', 'Available'),
+(76, 10, 'C1', 'Available'),
+(77, 10, 'C2', 'Booked'),
+(78, 10, 'C3', 'Available'),
+(79, 10, 'C4', 'Available'),
+(80, 10, 'C5', 'Available'),
+(81, 10, 'D1', 'Available'),
+(82, 10, 'D2', 'Available'),
+(83, 10, 'D3', 'Available'),
+(84, 10, 'D4', 'Available'),
+(85, 10, 'D5', 'Available'),
+(86, 11, 'A1', 'Available'),
+(87, 11, 'A2', 'Available'),
+(88, 11, 'A3', 'Available'),
+(89, 11, 'A4', 'Available'),
+(90, 11, 'A5', 'Available'),
+(91, 11, 'B1', 'Available'),
+(92, 11, 'B2', 'Available'),
+(93, 11, 'B3', 'Available'),
+(94, 11, 'B4', 'Available'),
+(95, 11, 'B5', 'Available'),
+(96, 11, 'C1', 'Available'),
+(97, 11, 'C2', 'Available'),
+(98, 11, 'C3', 'Available'),
+(99, 11, 'C4', 'Available'),
+(100, 11, 'C5', 'Available'),
+(101, 11, 'D1', 'Available'),
+(102, 11, 'D2', 'Available'),
+(103, 11, 'D3', 'Available'),
+(104, 11, 'D4', 'Available'),
+(105, 11, 'D5', 'Available'),
+(106, 12, 'A1', 'Available'),
+(107, 12, 'A2', 'Available'),
+(108, 12, 'A3', 'Available'),
+(109, 12, 'A4', 'Available'),
+(110, 12, 'A5', 'Available'),
+(111, 12, 'B1', 'Available'),
+(112, 12, 'B2', 'Available'),
+(113, 12, 'B3', 'Available'),
+(114, 12, 'B4', 'Available'),
+(115, 12, 'B5', 'Available'),
+(116, 12, 'C1', 'Available'),
+(117, 12, 'C2', 'Available'),
+(118, 12, 'C3', 'Available'),
+(119, 12, 'C4', 'Available'),
+(120, 12, 'C5', 'Available'),
+(121, 12, 'D1', 'Available'),
+(122, 12, 'D2', 'Available'),
+(123, 12, 'D3', 'Available'),
+(124, 12, 'D4', 'Available'),
+(125, 12, 'D5', 'Available'),
+(126, 13, 'A1', 'Available'),
+(127, 13, 'A2', 'Available'),
+(128, 13, 'A3', 'Available'),
+(129, 13, 'A4', 'Available'),
+(130, 13, 'A5', 'Available'),
+(131, 13, 'B1', 'Available'),
+(132, 13, 'B2', 'Available'),
+(133, 13, 'B3', 'Available'),
+(134, 13, 'B4', 'Available'),
+(135, 13, 'B5', 'Available'),
+(136, 13, 'C1', 'Available'),
+(137, 13, 'C2', 'Available'),
+(138, 13, 'C3', 'Booked'),
+(139, 13, 'C4', 'Available'),
+(140, 13, 'C5', 'Available'),
+(141, 13, 'D1', 'Available'),
+(142, 13, 'D2', 'Available'),
+(143, 13, 'D3', 'Available'),
+(144, 13, 'D4', 'Available'),
+(145, 13, 'D5', 'Available'),
+(146, 14, 'A1', 'Available'),
+(147, 14, 'A2', 'Available'),
+(148, 14, 'A3', 'Available'),
+(149, 14, 'A4', 'Available'),
+(150, 14, 'A5', 'Available'),
+(151, 14, 'B1', 'Available'),
+(152, 14, 'B2', 'Available'),
+(153, 14, 'B3', 'Available'),
+(154, 14, 'B4', 'Available'),
+(155, 14, 'B5', 'Available'),
+(156, 14, 'C1', 'Booked'),
+(157, 14, 'C2', 'Available'),
+(158, 14, 'C3', 'Available'),
+(159, 14, 'C4', 'Available'),
+(160, 14, 'C5', 'Available'),
+(161, 14, 'D1', 'Available'),
+(162, 14, 'D2', 'Available'),
+(163, 14, 'D3', 'Available'),
+(164, 14, 'D4', 'Available'),
+(165, 14, 'D5', 'Available');
 
 -- --------------------------------------------------------
 
@@ -222,13 +256,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `phone`, `passport_no`, `created_at`) VALUES
-(1, 'Achira Dilshan', 'achira@gmail.com', '1111', '0714141512', '2026518', '2026-07-21 16:46:56'),
-(2, 'Saranga Ravindu', 'saranga@gmail.com', '1111', '0714141512', '256', '2026-07-22 21:42:07'),
-(7, 'Ravindu Saranga', 'ravindu@gmail.com', '1111', '0714141512', '56666', '2026-07-22 22:43:31'),
-(8, 'Osuka Lochana', 'osuka@gmail.com', '2222', '0112102056', 'SL/20216/315', '2026-07-22 23:19:49'),
-(9, 'osuka ', 'osuka1@gmail.com', '3333', '0714141512', 'SL\\2026\\356', '2026-07-23 06:48:17'),
-(10, 'Pulindu Ransaka', 'puli@gmail.com', '5262', '0714141512', 'SL/26/897', '2026-07-24 07:42:33'),
-(11, 'inuka', '11@gmail.com', '1111', '0714141512', 'SL\\2026\\358', '2026-07-24 08:22:48');
+(12, 'Sahan Rajakaruna', 'sahan@gmail.com', '1111', '0710256458', 'SL/2026/315', '2026-07-25 05:59:50'),
+(13, 'Dulin Rathnayake', 'dulin@gmail.com', '1111', '0778694210', 'SL/2024/521', '2026-07-25 06:00:45'),
+(14, 'Achira Dilshan', 'achira@gmail.com', '1111', '0714141512', 'SL/2022/897', '2026-07-25 06:01:19'),
+(15, 'Praveen Jayathissa', 'praveen@gmail.com', '2222', '0112102056', 'SL/2020/899', '2026-07-25 06:02:06');
 
 --
 -- Indexes for dumped tables
@@ -293,31 +324,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `flights`
 --
 ALTER TABLE `flights`
-  MODIFY `flight_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `flight_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `seats`
 --
 ALTER TABLE `seats`
-  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
