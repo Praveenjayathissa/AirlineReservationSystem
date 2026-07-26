@@ -56,7 +56,7 @@ if(search != null && !search.trim().isEmpty()){
 
         <a class="navbar-brand fw-bold" href="dashboard.jsp">
 
-            ✈ SkyJet Airlines Admin
+            ✈ Skyra Airlines Admin
 
         </a>
 
