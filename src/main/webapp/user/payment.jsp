@@ -91,7 +91,7 @@ con.close();
         <a class="navbar-brand fw-bold"
            href="../dashboard.jsp">
 
-            ✈ SkyJet Airlines
+            ✈ Skyra Airlines
 
         </a>
 

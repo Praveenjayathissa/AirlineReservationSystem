@@ -279,7 +279,7 @@ String txn = request.getParameter("txn");
 
     <h5>
 
-        ✈ Thank you for choosing SkyJet Airlines
+        ✈ Thank you for choosing Skyra Airlines
 
     </h5>
 
@@ -336,70 +336,6 @@ String txn = request.getParameter("txn");
 
 </html>
 
-<div class="alert alert-success">
-
-<h4>Your payment has been completed successfully.</h4>
-
-</div>
-
-<table class="table">
-
-<tr>
-
-<th>Transaction ID</th>
-
-<td><%= txn %></td>
-
-</tr>
-
-<tr>
-
-<th>Passenger</th>
-
-<td><%= user.getFullName() %></td>
-
-</tr>
-
-<tr>
-
-<th>Status</th>
-
-<td>Paid</td>
-
-</tr>
-
-</table>
-
-<div class="mt-4">
-
-<button class="btn btn-primary"
-onclick="window.print();">
-
-Print Receipt
-
-</button>
-
-<a href="myBookings.jsp"
-class="btn btn-success">
-
-My Bookings
-
-</a>
-
-<a href="flights.jsp"
-class="btn btn-secondary">
-
-Book Another Flight
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 <footer class="footer-simple mt-5">
 
